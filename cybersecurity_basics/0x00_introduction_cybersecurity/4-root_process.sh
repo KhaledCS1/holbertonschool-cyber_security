@@ -1,2 +1,2 @@
 #!/bin/bash
-ps u -u "$1" | grep -vE "VSZ| 0 +0 "
+ps -u "$1" --no-headers -o user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,cmd | grep -vE " 0 +0 "
